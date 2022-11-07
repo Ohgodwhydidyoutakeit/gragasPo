@@ -1,0 +1,33 @@
+@import '../../shared/variables';
+.navbar-container {
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    img {
+        height: auto;
+        max-width: 10%;
+    }
+
+    input, select{
+        align-self: center;
+    }
+
+    input {
+        width: 30%;
+        background-color: $black;
+        color:$white;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        border-color: $orange;
+    
+        &:focus{
+            border-color: green;
+        }
+    }
+    select{
+        color: $white;
+        background-color: $light-black;
+        border-radius: 0.2rem;
+        padding:0.2rem;
+    }
+}
