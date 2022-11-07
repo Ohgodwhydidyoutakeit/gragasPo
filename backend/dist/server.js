@@ -4,13 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const Router_1 = __importDefault(require("./src/Routes/Router"));
 require('dotenv').config();
 const app = (0, express_1.default)();
-app.get('/', (req, res) => {
-    res.status(200).send({
-        message: "works"
-    });
-});
+app.use('/', Router_1.default);
 app.listen(process.env.PORT, () => {
     console.log(`Express is running on http://localhost:${process.env.PORT}/`);
 });

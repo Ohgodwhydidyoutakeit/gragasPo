@@ -1,15 +1,12 @@
 
 import express from "express";
+import MainRoute from "./src/Routes/Router";
 require('dotenv').config()
 
 const app = express();
 
 
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.status(200).send({
-        message:"works"
-    })
-})
+app.use('/',MainRoute)
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Express is running on http://localhost:${process.env.PORT}/`)
