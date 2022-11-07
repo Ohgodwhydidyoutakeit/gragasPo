@@ -7,6 +7,6 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class GragasApiService {
-
+  url = "htt"
   constructor(private http: HttpClient) { }
 }
