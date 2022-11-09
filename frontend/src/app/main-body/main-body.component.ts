@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GragasApiService } from '../gragas-api.service';
 
 @Component({
   selector: 'app-main-body',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-body.component.scss']
 })
 export class MainBodyComponent implements OnInit {
+ 
 
-  constructor() { }
+  constructor(private gragasApiService: GragasApiService) { }
 
   ngOnInit(): void {
+    this.getData()
+  }
+
+  getData = () => {
+    this.gragasApiService.getData().subscribe(observer => console.log(observer))
   }
 
 }
