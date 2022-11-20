@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GragasApiService } from '../gragas-api.service';
+import { GragasApiService, IApiReponse } from '../gragas-api.service';
 
 @Component({
   selector: 'app-main-body',
@@ -7,16 +7,19 @@ import { GragasApiService } from '../gragas-api.service';
   styleUrls: ['./main-body.component.scss']
 })
 export class MainBodyComponent implements OnInit {
- 
 
-  constructor(private gragasApiService: GragasApiService) { }
+  videos: IApiReponse[] = []
+  constructor(public gragasApiService: GragasApiService) { }
 
   ngOnInit(): void {
     this.getData()
   }
 
   getData = () => {
-    this.gragasApiService.getData().subscribe(observer => console.log(observer))
+    this.gragasApiService.getData().subscribe(observer => {
+      console.log(observer)
+      this.videos = observer
+    })
   }
 
 }

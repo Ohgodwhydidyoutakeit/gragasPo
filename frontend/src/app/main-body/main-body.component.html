@@ -1,1 +1,5 @@
-<p>main-body works!</p>
+<ul *ngIf="videos.length" class="heroes">
+    <li *ngFor="let video of videos">
+        <span class="badge">{{video.title}}</span>
+    </li>
+</ul>
